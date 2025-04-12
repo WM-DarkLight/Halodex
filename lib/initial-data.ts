@@ -36,7 +36,7 @@ export const initialCharacters: Omit<Character, "id">[] = [
     abilities: "Super-intelligence, data processing, hacking, infiltration, holographic projection, tactical analysis",
     biography:
       "Created from a flash clone of Dr. Catherine Halsey's brain, Cortana was paired with Master Chief and became his closest ally. After years of service, she succumbed to rampancy but later returned as the leader of the Created, an AI rebellion seeking to enforce peace through control of all advanced technology.",
-    imageUrl: "https://i.imgur.com/8cC5xvv.png",
+    imageUrl: "https://assets.zyrosite.com/AR0L4M83e0TJRLvP/cortanahalo3-cropped-AGB24evxxvTDNQKl.jpg",
     firstAppearance: "Halo: Combat Evolved (2001)",
     threatLevel: 10,
     combatSkill: 1,
@@ -58,7 +58,7 @@ export const initialCharacters: Omit<Character, "id">[] = [
     abilities: "Superior strength and agility, tactical brilliance, leadership, combat expertise",
     biography:
       "Once a high-ranking Covenant commander, Thel 'Vadam was branded with the mark of shame after failing to prevent the destruction of Installation 04. Given the rank of Arbiter, a position meant for suicide missions, he eventually discovered the truth about the Halo rings and allied with humanity against the Covenant leadership and later the Flood.",
-    imageUrl: "https://i.imgur.com/KGIwIyt.png",
+    imageUrl: "https://assets.zyrosite.com/AR0L4M83e0TJRLvP/1702709079877-Yan19pBxp7hoL1km.jpeg",
     firstAppearance: "Halo 2 (2004)",
     threatLevel: 8,
     combatSkill: 9,
@@ -81,7 +81,7 @@ export const initialCharacters: Omit<Character, "id">[] = [
       "Collective consciousness, neural physics manipulation, telepathy, logic plague (AI corruption), vast knowledge from consumed minds",
     biography:
       "The Gravemind is the collective intelligence of the Flood, formed when the parasite reaches a critical mass of biomatter and intelligence. It possesses the knowledge of every being the Flood has ever consumed, including ancient Forerunners. Manipulative and patient, it seeks to consume all sentient life in the galaxy.",
-    imageUrl: "https://i.imgur.com/JnVuFmj.png",
+    imageUrl: "https://assets.zyrosite.com/AR0L4M83e0TJRLvP/gravemind_halo_2_remake-AoPWGpGzOruOMeOa.png",
     firstAppearance: "Halo 2 (2004)",
     threatLevel: 10,
     combatSkill: 7,
@@ -103,7 +103,7 @@ export const initialCharacters: Omit<Character, "id">[] = [
     abilities: "Exceptional strength even for a Brute, tactical genius, leadership, combat expertise",
     biography:
       "Once a slave soldier for the Covenant, Atriox rose to prominence by surviving missions that killed his brethren. Eventually, he rebelled against the Covenant and formed the Banished, a powerful mercenary organization. His tactical brilliance and ruthlessness have made the Banished one of the greatest threats to humanity after the fall of the Covenant.",
-    imageUrl: "https://i.imgur.com/YDgAGjD.png",
+    imageUrl: "https://assets.zyrosite.com/AR0L4M83e0TJRLvP/halo-infinite-atriox-10-mp8W9p9EgVswj67p.jpg",
     firstAppearance: "Halo Wars 2 (2017)",
     threatLevel: 9,
     combatSkill: 9,
@@ -125,7 +125,7 @@ export const initialCharacters: Omit<Character, "id">[] = [
     abilities: "Telekinesis, near-immortality, superhuman strength and durability, advanced technological manipulation",
     biography:
       "The Didact was the supreme commander of the Forerunner military and husband to the Librarian. After being imprisoned for 100,000 years, he was accidentally released by the Master Chief and sought to use the Composer to transform humanity into Promethean Knights, viewing them as a threat to the galaxy.",
-    imageUrl: "https://i.imgur.com/pWnkjYt.png",
+    imageUrl: "https://assets.zyrosite.com/AR0L4M83e0TJRLvP/thumb-YNqBrjyG5bcQVqak.jpg",
     firstAppearance: "Halo 4 (2012)",
     threatLevel: 10,
     combatSkill: 10,
@@ -147,7 +147,7 @@ export const initialCharacters: Omit<Character, "id">[] = [
     abilities: "Advanced data analysis, hacking, tactical support, limited system control",
     biography:
       "Created by Dr. Catherine Halsey as a copy of Cortana designed to lock down and delete her rampant predecessor, the Weapon is a younger, more innocent AI who assists Master Chief during the conflict with the Banished on Zeta Halo. Unlike Cortana, she was designed with a deletion timer to prevent rampancy.",
-    imageUrl: "https://i.imgur.com/LZoZPGw.png",
+    imageUrl: "https://assets.zyrosite.com/AR0L4M83e0TJRLvP/halo-infinite-weapon-cortana-story-spoilers-mP4OQE2n0lib6Nlz.jpeg",
     firstAppearance: "Halo Infinite (2021)",
     threatLevel: 7,
     combatSkill: 1,
