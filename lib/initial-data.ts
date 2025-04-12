@@ -14,8 +14,7 @@ export const initialCharacters: Omit<Character, "id">[] = [
       "Enhanced strength, speed, reflexes, and durability due to Spartan augmentations and MJOLNIR armor. Expert in all forms of combat.",
     biography:
       "John-117, better known as the Master Chief, is a Spartan-II supersoldier and the protagonist of the Halo franchise. Abducted at age six and trained from childhood, he was one of the few to survive the augmentation procedures. He has saved humanity multiple times, most notably during the Human-Covenant War and the conflict with the Didact.",
-    imageUrl:
-      "https://assets.zyrosite.com/AR0L4M83e0TJRLvP/3095141-yellowmaster-YNqBrjnrN0SeKbJz.png",
+    imageUrl: "https://assets.zyrosite.com/AR0L4M83e0TJRLvP/3095141-yellowmaster-YNqBrjnrN0SeKbJz.png",
     firstAppearance: "Halo: Combat Evolved (2001)",
     threatLevel: 9,
     combatSkill: 10,
@@ -37,8 +36,7 @@ export const initialCharacters: Omit<Character, "id">[] = [
     abilities: "Super-intelligence, data processing, hacking, infiltration, holographic projection, tactical analysis",
     biography:
       "Created from a flash clone of Dr. Catherine Halsey's brain, Cortana was paired with Master Chief and became his closest ally. After years of service, she succumbed to rampancy but later returned as the leader of the Created, an AI rebellion seeking to enforce peace through control of all advanced technology.",
-    imageUrl:
-      "https://www.halopedia.org/images/thumb/e/e7/H5G_Render_Cortana-Evil_Transparent.png/250px-H5G_Render_Cortana-Evil_Transparent.png",
+    imageUrl: "https://i.imgur.com/8cC5xvv.png",
     firstAppearance: "Halo: Combat Evolved (2001)",
     threatLevel: 10,
     combatSkill: 1,
@@ -60,8 +58,7 @@ export const initialCharacters: Omit<Character, "id">[] = [
     abilities: "Superior strength and agility, tactical brilliance, leadership, combat expertise",
     biography:
       "Once a high-ranking Covenant commander, Thel 'Vadam was branded with the mark of shame after failing to prevent the destruction of Installation 04. Given the rank of Arbiter, a position meant for suicide missions, he eventually discovered the truth about the Halo rings and allied with humanity against the Covenant leadership and later the Flood.",
-    imageUrl:
-      "https://www.halopedia.org/images/thumb/f/fc/H5G_Render_Arbiter_Transparent.png/300px-H5G_Render_Arbiter_Transparent.png",
+    imageUrl: "https://i.imgur.com/KGIwIyt.png",
     firstAppearance: "Halo 2 (2004)",
     threatLevel: 8,
     combatSkill: 9,
@@ -84,8 +81,7 @@ export const initialCharacters: Omit<Character, "id">[] = [
       "Collective consciousness, neural physics manipulation, telepathy, logic plague (AI corruption), vast knowledge from consumed minds",
     biography:
       "The Gravemind is the collective intelligence of the Flood, formed when the parasite reaches a critical mass of biomatter and intelligence. It possesses the knowledge of every being the Flood has ever consumed, including ancient Forerunners. Manipulative and patient, it seeks to consume all sentient life in the galaxy.",
-    imageUrl:
-      "https://www.halopedia.org/images/thumb/c/cf/H2_GravemindCutsceneRender.png/300px-H2_GravemindCutsceneRender.png",
+    imageUrl: "https://i.imgur.com/JnVuFmj.png",
     firstAppearance: "Halo 2 (2004)",
     threatLevel: 10,
     combatSkill: 7,
@@ -107,7 +103,7 @@ export const initialCharacters: Omit<Character, "id">[] = [
     abilities: "Exceptional strength even for a Brute, tactical genius, leadership, combat expertise",
     biography:
       "Once a slave soldier for the Covenant, Atriox rose to prominence by surviving missions that killed his brethren. Eventually, he rebelled against the Covenant and formed the Banished, a powerful mercenary organization. His tactical brilliance and ruthlessness have made the Banished one of the greatest threats to humanity after the fall of the Covenant.",
-    imageUrl: "https://www.halopedia.org/images/thumb/a/a7/HW2-Atriox-Render.png/300px-HW2-Atriox-Render.png",
+    imageUrl: "https://i.imgur.com/YDgAGjD.png",
     firstAppearance: "Halo Wars 2 (2017)",
     threatLevel: 9,
     combatSkill: 9,
@@ -129,7 +125,7 @@ export const initialCharacters: Omit<Character, "id">[] = [
     abilities: "Telekinesis, near-immortality, superhuman strength and durability, advanced technological manipulation",
     biography:
       "The Didact was the supreme commander of the Forerunner military and husband to the Librarian. After being imprisoned for 100,000 years, he was accidentally released by the Master Chief and sought to use the Composer to transform humanity into Promethean Knights, viewing them as a threat to the galaxy.",
-    imageUrl: "https://www.halopedia.org/images/thumb/1/1d/Didact_H4_Render.png/250px-Didact_H4_Render.png",
+    imageUrl: "https://i.imgur.com/pWnkjYt.png",
     firstAppearance: "Halo 4 (2012)",
     threatLevel: 10,
     combatSkill: 10,
@@ -151,7 +147,7 @@ export const initialCharacters: Omit<Character, "id">[] = [
     abilities: "Advanced data analysis, hacking, tactical support, limited system control",
     biography:
       "Created by Dr. Catherine Halsey as a copy of Cortana designed to lock down and delete her rampant predecessor, the Weapon is a younger, more innocent AI who assists Master Chief during the conflict with the Banished on Zeta Halo. Unlike Cortana, she was designed with a deletion timer to prevent rampancy.",
-    imageUrl: "https://www.halopedia.org/images/thumb/9/98/HINF_The_Weapon_Render.png/250px-HINF_The_Weapon_Render.png",
+    imageUrl: "https://i.imgur.com/LZoZPGw.png",
     firstAppearance: "Halo Infinite (2021)",
     threatLevel: 7,
     combatSkill: 1,

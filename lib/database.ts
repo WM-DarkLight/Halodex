@@ -3,7 +3,7 @@ import { initialCharacters } from "./initial-data"
 
 // IndexedDB setup
 const DB_NAME = "halodex"
-const DB_VERSION = 1
+const DB_VERSION = 2 // Increased version to trigger database upgrade
 const CHARACTERS_STORE = "characters"
 
 let db: IDBDatabase | null = null
@@ -25,6 +25,11 @@ export async function initializeDB(): Promise<void> {
     request.onupgradeneeded = (event) => {
       const database = (event.target as IDBOpenDBRequest).result
 
+      // If the object store exists, delete it to start fresh
+      if (database.objectStoreNames.contains(CHARACTERS_STORE)) {
+        database.deleteObjectStore(CHARACTERS_STORE)
+      }
+
       // Create object store for characters
       const store = database.createObjectStore(CHARACTERS_STORE, { keyPath: "id", autoIncrement: true })
 
@@ -37,17 +42,40 @@ export async function initializeDB(): Promise<void> {
       store.transaction.oncomplete = async () => {
         const characterStore = database.transaction(CHARACTERS_STORE, "readwrite").objectStore(CHARACTERS_STORE)
 
-        // Check if data already exists
-        const countRequest = characterStore.count()
-        countRequest.onsuccess = () => {
-          if (countRequest.result === 0) {
-            // Add initial data
-            initialCharacters.forEach((character) => {
-              characterStore.add(character)
-            })
-          }
-        }
+        // Add initial data without checking if data exists
+        initialCharacters.forEach((character) => {
+          characterStore.add(character)
+        })
       }
+    }
+  })
+}
+
+export async function resetDatabase(): Promise<void> {
+  return new Promise((resolve, reject) => {
+    if (!db) {
+      reject("Database not initialized")
+      return
+    }
+
+    // Close the current connection
+    db.close()
+    db = null
+
+    // Delete the database
+    const deleteRequest = indexedDB.deleteDatabase(DB_NAME)
+
+    deleteRequest.onsuccess = () => {
+      console.log("Database deleted successfully")
+      // Reinitialize the database
+      initializeDB()
+        .then(() => resolve())
+        .catch((error) => reject(error))
+    }
+
+    deleteRequest.onerror = (event) => {
+      console.error("Error deleting database:", event)
+      reject("Failed to delete database")
     }
   })
 }

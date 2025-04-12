@@ -8,6 +8,8 @@ import { cn } from "@/lib/utils"
 
 // Add React.memo to optimize rendering
 import React from "react"
+// Import the new ImageWithFallback component
+import ImageWithFallback from "./image-helper"
 
 interface CharacterCardProps {
   character: Character
@@ -26,13 +28,11 @@ function CharacterCard({ character, isSelected, isFavorite, onClick }: Character
       onClick={onClick}
     >
       <div className="relative h-32 bg-slate-200 dark:bg-slate-700">
-        <img
-          src={character.imageUrl || "/placeholder.svg?height=128&width=256"}
+        <ImageWithFallback
+          src={character.imageUrl || "/placeholder.svg"}
+          fallbackSrc="/placeholder.svg?height=128&width=256"
           alt={character.name}
           className="w-full h-full object-cover"
-          onError={(e) => {
-            ;(e.target as HTMLImageElement).src = "/placeholder.svg?height=128&width=256"
-          }}
         />
         {isFavorite && (
           <div className="absolute top-2 right-2">

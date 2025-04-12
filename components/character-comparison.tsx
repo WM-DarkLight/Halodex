@@ -103,6 +103,7 @@ const CharacterComparison = React.memo(({ characters, onClose }: CharacterCompar
                     alt={leftChar.name}
                     className="w-full h-full object-cover"
                     onError={(e) => {
+                      console.log("Comparison image failed to load:", leftChar.imageUrl)
                       ;(e.target as HTMLImageElement).src = "/placeholder.svg?height=128&width=256"
                     }}
                   />
@@ -128,6 +129,7 @@ const CharacterComparison = React.memo(({ characters, onClose }: CharacterCompar
                     alt={rightChar.name}
                     className="w-full h-full object-cover"
                     onError={(e) => {
+                      console.log("Comparison image failed to load:", rightChar.imageUrl)
                       ;(e.target as HTMLImageElement).src = "/placeholder.svg?height=128&width=256"
                     }}
                   />

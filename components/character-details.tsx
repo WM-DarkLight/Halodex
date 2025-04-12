@@ -12,6 +12,7 @@ import { cn } from "@/lib/utils"
 
 // Add React.memo to optimize rendering
 import React from "react"
+import ImageWithFallback from "./image-helper"
 
 interface CharacterDetailsProps {
   character: Character
@@ -44,13 +45,11 @@ function CharacterDetails({ character, isFavorite, onToggleFavorite, onEdit, onD
   return (
     <Card className="h-full overflow-hidden">
       <div className="relative h-48 md:h-64 bg-gradient-to-r from-slate-700 to-slate-900">
-        <img
-          src={character.imageUrl || "/placeholder.svg?height=256&width=800"}
+        <ImageWithFallback
+          src={character.imageUrl || "/placeholder.svg"}
+          fallbackSrc="/placeholder.svg?height=256&width=800"
           alt={character.name}
           className="w-full h-full object-cover opacity-80"
-          onError={(e) => {
-            ;(e.target as HTMLImageElement).src = "/placeholder.svg?height=256&width=800"
-          }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
         <div className="absolute bottom-0 left-0 p-4 md:p-6">

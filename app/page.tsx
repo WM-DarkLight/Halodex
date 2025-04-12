@@ -26,6 +26,7 @@ import {
   BarChart2,
   Scale,
   Keyboard,
+  Trash,
 } from "lucide-react"
 import {
   initializeDB,
@@ -34,6 +35,7 @@ import {
   addCharacter,
   updateCharacter,
   deleteCharacter,
+  resetDatabase,
 } from "@/lib/database"
 import type { Character } from "@/lib/types"
 import CharacterCard from "@/components/character-card"
@@ -60,6 +62,7 @@ export default function HalodexApp() {
   const [isEditDialogOpen, setIsEditDialogOpen] = useState(false)
   const [isComparisonMode, setIsComparisonMode] = useState(false)
   const [isKeyboardShortcutsOpen, setIsKeyboardShortcutsOpen] = useState(false)
+  const [isResetConfirmOpen, setIsResetConfirmOpen] = useState(false)
   const [sortOrder, setSortOrder] = useState<"name" | "threat" | "faction">("name")
   const [viewMode, setViewMode] = useLocalStorage<"list" | "grid">("halodex-view-mode", "list")
   const [favorites, setFavorites] = useLocalStorage<number[]>("halodex-favorites", [])
@@ -256,6 +259,30 @@ export default function HalodexApp() {
     }
   }
 
+  const handleResetDatabase = async () => {
+    try {
+      setIsLoading(true)
+      await resetDatabase()
+      const chars = await getAllCharacters()
+      setCharacters(chars)
+      setSelectedCharacter(null)
+      setIsResetConfirmOpen(false)
+      toast({
+        title: "Success",
+        description: "Database has been reset to initial data.",
+      })
+    } catch (error) {
+      console.error("Failed to reset database:", error)
+      toast({
+        title: "Error",
+        description: "Failed to reset database.",
+        variant: "destructive",
+      })
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
   const toggleFavorite = (id: number) => {
     setFavorites((prev) => (prev.includes(id) ? prev.filter((favId) => favId !== id) : [...prev, id]))
   }
@@ -366,6 +393,10 @@ export default function HalodexApp() {
                     <Upload className="mr-2 h-4 w-4" />
                     Import Data
                     <input id="import-file" type="file" accept=".json" className="hidden" onChange={importData} />
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => setIsResetConfirmOpen(true)}>
+                    <Trash className="mr-2 h-4 w-4" />
+                    Reset Database
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => window.location.reload()}>
                     <RefreshCw className="mr-2 h-4 w-4" />
@@ -549,6 +580,7 @@ export default function HalodexApp() {
                               alt={character.name}
                               className="w-full h-full object-cover"
                               onError={(e) => {
+                                console.log("List image failed to load:", character.imageUrl)
                                 ;(e.target as HTMLImageElement).src = "/placeholder.svg?height=40&width=40"
                               }}
                             />
@@ -663,6 +695,27 @@ export default function HalodexApp() {
               onCancel={() => setIsEditDialogOpen(false)}
             />
           )}
+        </DialogContent>
+      </Dialog>
+
+      {/* Reset Database Confirmation Dialog */}
+      <Dialog open={isResetConfirmOpen} onOpenChange={setIsResetConfirmOpen}>
+        <DialogContent className="max-w-md">
+          <DialogHeader>
+            <DialogTitle className="text-red-500">Reset Database</DialogTitle>
+            <DialogDescription>
+              This will reset the database to its initial state. All custom characters will be lost. Are you sure you
+              want to continue?
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex justify-end gap-2 mt-4">
+            <Button variant="outline" onClick={() => setIsResetConfirmOpen(false)}>
+              Cancel
+            </Button>
+            <Button variant="destructive" onClick={handleResetDatabase}>
+              Reset Database
+            </Button>
+          </div>
         </DialogContent>
       </Dialog>
 
